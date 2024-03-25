@@ -27,7 +27,12 @@ function installNodeExporter {
   else
     installRemoteNodeExporter
   fi
-	ln -s /usr/local/${NODE_EXPORTER_RELEASE} /usr/local/node_exporter
+  ln -s /usr/local/${NODE_EXPORTER_RELEASE} /usr/local/node_exporter
+}
+
+function setupNodeExporter {
+  chmod +x /usr/local/node_exporter/node_exporter
+  mkdir /usr/local/node_exporter/logs
 }
 
 installNodeExporter
