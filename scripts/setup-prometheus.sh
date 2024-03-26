@@ -2,11 +2,6 @@
 
 source "/vagrant/scripts/common.sh"
 
-PROMETHEUS_RELEASE=prometheus-${PROMETHEUS_VERSION}.linux-amd64
-PROMETHEUS_ARCHIVE=${PROMETHEUS_RELEASE}.tar.gz
-PROMETHEUS_DOWNLOAD=https://github.com/prometheus/prometheus/releases/download/v${PROMETHEUS_VERSION}/${PROMETHEUS_ARCHIVE}
-PROMETHEUS_RES_DIR=/vagrant/resources/prometheus
-
 echo "setup prometheus"
 
 function installLocalPrometheus {
@@ -33,7 +28,7 @@ function installPrometheus {
 
 function setupPrometheus {
   chmod +x /usr/local/prometheus/prometheus
-  mkdir /usr/local/prometheus/logs
+  mkdir ${PROMETHEUS_LOG_DIR}
   echo "copy prometheus configuration files"
   cp -f ${PROMETHEUS_RES_DIR}/* /usr/local/prometheus/
 }

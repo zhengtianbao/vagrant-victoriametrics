@@ -2,10 +2,6 @@
 
 source "/vagrant/scripts/common.sh"
 
-NODE_EXPORTER_RELEASE=node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64
-NODE_EXPORTER_ARCHIVE=${NODE_EXPORTER_RELEASE}.tar.gz
-NODE_EXPORTER_DOWNLOAD=https://github.com/prometheus/node_exporter/releases/download/v${NODE_EXPORTER_VERSION}/${NODE_EXPORTER_ARCHIVE}
-
 echo "setup node_exporter"
 
 function installLocalNodeExporter {
@@ -32,7 +28,7 @@ function installNodeExporter {
 
 function setupNodeExporter {
   chmod +x /usr/local/node_exporter/node_exporter
-  mkdir /usr/local/node_exporter/logs
+  mkdir ${NODE_EXPORTER_LOG_DIR}
 }
 
 installNodeExporter

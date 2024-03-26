@@ -2,11 +2,9 @@
 
 source "/vagrant/scripts/common.sh"
 
-LOGPATH=/usr/local/node_exporter/logs
-
 function startServices {
   echo "starting node_exporter service"
-  nohup /usr/local/node_exporter/node_exporter > ${LOGPATH}/node_exporter.log 2>&1 &
+  nohup /usr/local/node_exporter/node_exporter > ${NODE_EXPORTER_LOG_DIR}/node_exporter.log 2>&1 &
 }
 
 echo "start node_exporter"
