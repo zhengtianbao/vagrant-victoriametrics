@@ -10,6 +10,7 @@ Vagrant.configure("2") do |config|
     node.vm.network :private_network, ip: "192.168.56.10"
     node.vm.provision :shell, path: 'scripts/setup-ubuntu.sh'
     node.vm.provision :shell, path: 'scripts/setup-node_exporter.sh'
+    node.vm.provision :shell, path: 'scripts/setup-prometheus.sh'
     node.vm.provision :shell, path: 'scripts/bootstrap.sh', run: 'always'
   end
 end
