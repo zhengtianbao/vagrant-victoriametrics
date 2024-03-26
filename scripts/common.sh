@@ -17,21 +17,21 @@ PROMETHEUS_LOG_DIR=/usr/local/prometheus/logs
 
 # utility functions
 function resourceExists {
-	FILE=/vagrant/resources/$1
-	if [ -e $FILE ]
-	then
-		return 0
-	else
-		return 1
-	fi
+  FILE=/vagrant/resources/$1
+  if [ -e $FILE ]
+  then
+    return 0
+  else
+    return 1
+  fi
 }
 
 function fileExists {
-	FILE=$1
-	if [ -e $FILE ]
-	then
-		return 0
-	else
-		return 1
-	fi
+  FILE=$1
+  if [ -e $FILE ]
+  then
+    return 0
+  else
+    return 1
+  fi
 }
