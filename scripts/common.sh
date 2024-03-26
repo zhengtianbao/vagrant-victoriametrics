@@ -15,6 +15,16 @@ PROMETHEUS_DOWNLOAD=https://github.com/prometheus/prometheus/releases/download/v
 PROMETHEUS_RES_DIR=/vagrant/resources/prometheus
 PROMETHEUS_LOG_DIR=/usr/local/prometheus/logs
 
+# victoriametrics
+VICTORIAMETRICS_RELEASE=victoria-metrics-linux-amd64-v${VICTORIAMETRICS_VERSION}-cluster
+VICTORIAMETRICS_ARCHIVE=${VICTORIAMETRICS_RELEASE}.tar.gz
+VICTORIAMETRICS_DOWNLOAD=https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v${VICTORIAMETRICS_VERSION}/${VICTORIAMETRICS_ARCHIVE}
+VMUTILS_RELEASE=vmutils-linux-amd64-v${VICTORIAMETRICS_VERSION}
+VMUTILS_ARCHIVE=${VMUTILS_RELEASE}.tar.gz
+VMUTILS_DOWNLOAD=https://github.com/VictoriaMetrics/VictoriaMetrics/releases/download/v${VICTORIAMETRICS_VERSION}/${VMUTILS_ARCHIVE}
+VICTORIAMETRICS_RES_DIR=/vagrant/resources/victoriametrics
+VICTORIAMETRICS_LOG_DIR=/usr/local/victoriametrics/logs
+
 # utility functions
 function resourceExists {
   FILE=/vagrant/resources/$1

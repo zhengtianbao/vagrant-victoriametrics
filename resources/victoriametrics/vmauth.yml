@@ -1,0 +1,12 @@
+users:
+- bearer_token: "selectuser"
+  url_prefix:
+    - "http://127.0.0.1:8481/select/0/prometheus"
+    - "http://127.0.0.1:8581/select/0/prometheus"
+    - "http://127.0.0.1:8681/select/0/prometheus"
+
+- bearer_token: "insertuser"
+  url_prefix:
+    - "http://127.0.0.1:8480/insert/0/prometheus"
+    - "http://127.0.0.1:8580/insert/0/prometheus"
+    - "http://127.0.0.1:8680/insert/0/prometheus"
