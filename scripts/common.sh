@@ -25,6 +25,13 @@ VMUTILS_DOWNLOAD=https://github.com/VictoriaMetrics/VictoriaMetrics/releases/dow
 VICTORIAMETRICS_RES_DIR=/vagrant/resources/victoriametrics
 VICTORIAMETRICS_LOG_DIR=/usr/local/victoriametrics/logs
 
+# alertmanager
+ALERTMANAGER_RELEASE=alertmanager-${ALERTMANAGER_VERSION}.linux-amd64
+ALERTMANAGER_ARCHIVE=${ALERTMANAGER_RELEASE}.tar.gz
+ALERTMANAGER_DOWNLOAD=https://github.com/prometheus/alertmanager/releases/download/v${ALERTMANAGER_VERSION}/${ALERTMANAGER_ARCHIVE}
+ALERTMANAGER_RES_DIR=/vagrant/resources/alertmanager
+ALERTMANAGER_LOG_DIR=/usr/local/alertmanager/logs
+
 # utility functions
 function resourceExists {
   FILE=/vagrant/resources/$1

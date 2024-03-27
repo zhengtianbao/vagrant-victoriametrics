@@ -9,4 +9,3 @@ groups:
     annotations:
       summary: Node {{ $labels.instance }} is down
       description: Node {{ $labels.instance }} has been down for 30 seconds.
-
