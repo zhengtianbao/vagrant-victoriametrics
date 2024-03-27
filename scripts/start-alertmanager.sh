@@ -11,6 +11,7 @@ function startAlertmanagerServices {
   echo "starting alertmanager service"
   nohup /usr/local/alertmanager/alertmanager \
     --config.file="/usr/local/alertmanager/alertmanager.yml" \
+    --storage.path="/usr/local/alertmanager/data0" \
     --cluster.advertise-address="192.168.56.10:8001" \
     --cluster.listen-address="192.168.56.10:8001" \
     --cluster.peer="192.168.56.10:8002" \
@@ -18,6 +19,7 @@ function startAlertmanagerServices {
     --web.listen-address="0.0.0.0:9093" > ${ALERTMANAGER_LOG_DIR}/alertmanager0.log 2>&1 &
   nohup /usr/local/alertmanager/alertmanager \
     --config.file="/usr/local/alertmanager/alertmanager.yml" \
+    --storage.path="/usr/local/alertmanager/data1" \
     --cluster.advertise-address="192.168.56.10:8002" \
     --cluster.listen-address="192.168.56.10:8002" \
     --cluster.peer="192.168.56.10:8001" \
