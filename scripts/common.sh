@@ -32,6 +32,12 @@ ALERTMANAGER_DOWNLOAD=https://github.com/prometheus/alertmanager/releases/downlo
 ALERTMANAGER_RES_DIR=/vagrant/resources/alertmanager
 ALERTMANAGER_LOG_DIR=/usr/local/alertmanager/logs
 
+# grafana
+GRAFANA_RELEASE=grafana-${GRAFANA_VERSION}
+GRAFANA_ARCHIVE=${GRAFANA_RELEASE}.linux-amd64.tar.gz
+GRAFANA_DOWNLOAD=https://dl.grafana.com/oss/release/${GRAFANA_ARCHIVE}
+GRAFANA_LOG_DIR=/usr/local/grafana/logs
+
 # utility functions
 function resourceExists {
   FILE=/vagrant/resources/$1

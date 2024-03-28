@@ -13,6 +13,7 @@ Vagrant.configure("2") do |config|
     node.vm.provision :shell, path: 'scripts/setup-prometheus.sh'
     node.vm.provision :shell, path: 'scripts/setup-alertmanager.sh'
     node.vm.provision :shell, path: 'scripts/setup-victoriametrics.sh'
+    node.vm.provision :shell, path: 'scripts/setup-grafana.sh'
     node.vm.provision :shell, path: 'scripts/bootstrap.sh', run: 'always'
   end
 end

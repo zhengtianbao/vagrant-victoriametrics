@@ -6,3 +6,4 @@ bash /vagrant/scripts/start-node_exporter.sh # Start node_exporter.
 bash /vagrant/scripts/start-prometheus.sh # Start prometheus.
 bash /vagrant/scripts/start-alertmanager.sh # Start alertmanager.
 bash /vagrant/scripts/start-victoriametrics.sh # Start VictoriaMetrics cluster.
+bash /vagrant/scripts/start-grafana.sh # Start grafana.
