@@ -9,35 +9,29 @@ deleteDatasources:
 # list of datasources to insert/update depending
 # whats available in the database
 datasources:
-    # <string, required> Name of the VictoriaMetrics datasource
-    # displayed in Grafana panels and queries.
   - name: VictoriaMetrics
-    # <string, required> Sets the data source type.
-    type: victoriametrics-datasource
-    # <string, required> Sets the access mode, either
-    # proxy or direct (Server or Browser in the UI).
-    # Some data sources are incompatible with any setting
-    # but proxy (Server).
+    type: prometheus
     access: proxy
-    # <string> Sets default URL of the cluster version of VictoriaMetrics
     url: http://127.0.0.1:8427
-    # <string> Sets the pre-selected datasource for new panels.
-    # You can set only one default data source per organization.
     isDefault: true
-    # <bool> allow users to edit datasources from the UI.
     editable: true
     jsonData:
       httpHeaderName1: 'Authorization'
     secureJsonData:
       httpHeaderValue1: 'Bearer selectuser'
 
-    # <string, required> name of the datasource. Required
-  - name: Prometheus
-    # <string, required> datasource type. Required
-    type: prometheus
-    # <string, required> access mode. direct or proxy. Required
+  - name: VictoriaMetrics-datasource
+    type: victoriametrics-datasource
     access: proxy
-    # <string> url
+    url: http://127.0.0.1:8427
+    editable: true
+    jsonData:
+      httpHeaderName1: 'Authorization'
+    secureJsonData:
+      httpHeaderValue1: 'Bearer selectuser'
+
+  - name: Prometheus
+    type: prometheus
+    access: proxy
     url: http://127.0.0.1:9090
-    # <bool> allow users to edit datasources from the UI.
     editable: true
