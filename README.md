@@ -3,6 +3,8 @@ Vagrant for VictoriaMetrics Cluster
 
 ## Introduction
 
+![](docs/images/cluster.png)
+
 Vagrant project spin up a single virtual machine running:
 
 - node_exporter
