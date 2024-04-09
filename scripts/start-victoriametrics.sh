@@ -63,6 +63,15 @@ function startVMAlertService {
   done
 }
 
+function startVMAgentService {
+  echo "starting vmagent service"
+  nohup /usr/local/victoriametrics/vmagent-prod \
+    --promscrape.config=/usr/local/victoriametrics/scrape_config.yml \
+    --remoteWrite.headers='Authorization: Bearer insertuser' \
+    --remoteWrite.url=http://127.0.0.1:8427/ \
+    --remoteWrite.urlRelabelConfig=/usr/local/victoriametrics/relabel.yml > ${VICTORIAMETRICS_LOG_DIR}/vmagent.log 2>&1 &
+}
+
 echo "start victoriametrics cluster"
 
 startVMStorageServices
@@ -70,5 +79,6 @@ startVMInsertServices
 startVMSelectServices
 startVMAuthService
 startVMAlertService
+startVMAgentService
 
 echo "start victoriametrics cluster complete"

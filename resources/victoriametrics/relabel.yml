@@ -1,0 +1,9 @@
+- action: keep
+  source_labels: [job]
+  regex: "node_exporter"
+
+- action: replace
+  source_labels: [instance]
+  regex: "localhost:9100"
+  target_label: instance
+  replacement: "127.0.0.1:9100"
