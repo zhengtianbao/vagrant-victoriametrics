@@ -17,7 +17,7 @@ Vagrant project spin up a single virtual machine running:
 
 The versions of the above components that the VM is provisioned with are defined in the file `scripts/versions.sh`
 
-The following version combinations are known to work: -
+The following version combinations are known to work:
 
 - node_exporter 1.7.0
 - prometheus 2.16.0
@@ -40,6 +40,7 @@ The virtual machine will be running the following services:
 - vmselect * 3
 - vmauth * 1
 - vmalert * 2
+- vmagent * 1
 
 ## Getting Started
 
