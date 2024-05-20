@@ -66,6 +66,7 @@ function startVMAlertService {
 function startVMAgentService {
   echo "starting vmagent service"
   nohup /usr/local/victoriametrics/vmagent-prod \
+    --remoteWrite.tmpDataPath=/usr/local/victoriametrics/vmagent-remotewrite-data \
     --promscrape.config=/usr/local/victoriametrics/scrape_config.yml \
     --remoteWrite.headers='Authorization: Bearer insertuser' \
     --remoteWrite.url=http://127.0.0.1:8427/ \
